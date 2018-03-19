@@ -2,16 +2,36 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var passport = require('passport');
+var mongoose = require('mongoose');
+var flash = require('connect-flash');
+var validate = require('express-validator');
+var MongoStore = require('connect-mongo')(session);
 
 var book = require('./routes/book');
-var app = express();
 
-app.use(logger('dev'));
+var app = express();
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/login');
+
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({'extended':'false'}));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(session({
+  secret:'mysecret',
+  resave: false,
+  saveUninitialized: false,
+  store: new MongoStore({mongooseConnection: mongoose.connection}),
+  cookie: {maxAge: 180*60*1000}
+}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use('/books', express.static(path.join(__dirname, 'dist')));
+
 app.use('/book', book);
 
 // catch 404 and forward to error handler
