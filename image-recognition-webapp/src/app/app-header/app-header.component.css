@@ -4,14 +4,27 @@
 }
 
 img {
-  max-height: 3em;
+ max-height: 2em;
+  background: transparent;
 }
 
 .signup {
+  margin-top: 10px;
   border-radius: 1em;
   background-color: #FF3008;
 }
 
+
+ .signin {
+   margin-top: 10px;
+   border-radius: 1em;
+   background-color: transparent;
+ }
+
 .signup span{
   color: whitesmoke;
 }
+
+ .navigation{
+   margin: 5px;
+ }
