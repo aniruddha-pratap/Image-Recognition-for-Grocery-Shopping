@@ -28,3 +28,11 @@ img {
  .navigation{
    margin: 5px;
  }
+
+ .navbar {
+   background-color: white;
+   background: white;
+   border-color: white;
+ }
+
+ .navbar li { color: #000 }

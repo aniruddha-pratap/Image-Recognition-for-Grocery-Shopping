@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.0/res/xml/preferences.xml"
+    },
+    {
+        "merged": "/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/res/merged/debug/xml/provider_paths.xml",
+        "source": "/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/myApp/react-native-image-picker/unspecified/res/xml/provider_paths.xml"
+    }
+]
