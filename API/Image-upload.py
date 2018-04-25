@@ -8,6 +8,7 @@ import logging, os
 from werkzeug import secure_filename
 import datetime
 import time
+from model import *
 
 app = Flask(__name__)
 file_handler = logging.FileHandler('server.log')
@@ -38,6 +39,16 @@ def api_root():
     	saved_path = os.path.join(app.config['UPLOAD_FOLDER'], img_name_2) # We ignore the extension of the file, assuming it is an image
     	app.logger.info("saving {}".format(saved_path))
     	img.save(saved_path)
+
+        # call the prediction module to predict the items
+        item = make_prediction(saved_path)
+
+        """
+        Item from make_prediction is a list in the form of: ['capsicum']
+        Call the functions of freshness here
+        and return the details
+        """
+
     	return 'Done'
     else:
     	return "Where is the image?"
