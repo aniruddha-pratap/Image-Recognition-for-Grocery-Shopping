@@ -1,14 +1,11 @@
-# Image-To-Text-Conversion
-Steps to run.
-1) install nodejs 
-2) npm install @angular/cli -g
-3) cd into the directory of webapp and run npm install (this installs the dependencies)
-4) run npm start and visit //localhost:3000/
+# Image Recognition for grocery shopping app
+An image recognition system for vegetables and fruits.
 
+Developed an android app to capture images using the mobile's integrated camera and to identify the below details:
+1. Detect the vegetable/ fruit present in the image
+2. Classify the quality of the item detected as good or bad
 
-It is an image recognition system for vegetables and fruits, which will help the user in identifying the fruits and vegetables in the input image.
-
-Three modules
-1.Feature Extraction
-2.Model
-3.Web application
+The application comprises of three modules:
+1. Mobile app to capture images
+2. CNN Model to detect items
+3. Feature Extraction to detect the quality of the image
