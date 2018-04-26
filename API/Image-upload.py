@@ -9,6 +9,7 @@ from werkzeug import secure_filename
 import datetime
 import time
 from model import *
+from texure_detection import *
 
 app = Flask(__name__)
 file_handler = logging.FileHandler('server.log')
@@ -21,37 +22,37 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 def create_new_folder(local_dir):
-    newpath = local_dir
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
-    return newpath
+	newpath = local_dir
+	if not os.path.exists(newpath):
+		os.makedirs(newpath)
+	return newpath
 
 @app.route('/', methods = ['POST'])
 def api_root():
-    app.logger.info(PROJECT_HOME)
-    if request.method == 'POST' and request.files['image']:
-    	app.logger.info(app.config['UPLOAD_FOLDER'])
-    	img = request.files['image']
-    	img_name = secure_filename(img.filename)
-    	ts = time.time()
-    	img_name_2 = datetime.datetime.fromtimestamp(ts).strftime('%Y_%m_%d_%H_%M_%S')
-    	create_new_folder(app.config['UPLOAD_FOLDER'])
-    	saved_path = os.path.join(app.config['UPLOAD_FOLDER'], img_name_2) # We ignore the extension of the file, assuming it is an image
-    	app.logger.info("saving {}".format(saved_path))
-    	img.save(saved_path)
+	app.logger.info(PROJECT_HOME)
+	if request.method == 'POST' and request.files['image']:
+		app.logger.info(app.config['UPLOAD_FOLDER'])
+		img = request.files['image']
+		#img_name = secure_filename(img.filename)
+		ts = time.time()
+		img_name_2 = datetime.datetime.fromtimestamp(ts).strftime('%Y_%m_%d_%H_%M_%S')
+		create_new_folder(app.config['UPLOAD_FOLDER'])
+		saved_path = os.path.join(app.config['UPLOAD_FOLDER'], img_name_2) # We ignore the extension of the file, assuming it is an image
+		app.logger.info("saving {}".format(saved_path))img.save(saved_path)
 
-        # call the prediction module to predict the items
-        item = make_prediction(saved_path)
 
-        """
-        Item from make_prediction is a list in the form of: ['capsicum']
-        Call the functions of freshness here
-        and return the details
-        """
-
-    	return 'Done'
-    else:
-    	return "Where is the image?"
+		# call the prediction module to predict the items
+		item = make_prediction(saved_path)
+		svc_texture, rf_texture = find_texture(item, saved_path)
+		"""
+		Item from make_prediction is a list in the form of: ['capsicum']
+		Call the functions of freshness here
+		and return the details
+		"""
+		return_string = 'Predicted Item = '+item[0]+'\nPredicted Quality using SVC = '+svc_texture+'\nPredicted Quality using RF = '+rf_texture
+		return return_string
+	else:
+		return "Where is the image?"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=False)
+	app.run(host='0.0.0.0', debug=False)
