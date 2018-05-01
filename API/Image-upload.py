@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/libsvm-3.22/python') #Path to libsvm directory
-# sys.path.append('/Users/aditi/anaconda/lib/python2.7/site-packages')
-# sys.path.append('/Users/aditi/anaconda/lib/site-python')
+sys.path.append('/Users/aditi/anaconda/lib/python2.7/site-packages')
+sys.path.append('/Users/aditi/anaconda/lib/site-python')
 
 from flask import Flask, url_for, send_from_directory, request
 import logging, os
@@ -50,10 +50,16 @@ def api_root():
 		Call the functions of freshness here
 		and return the details
 		"""
+		
+		
+		app.logger.info("Predicted Item : {}".format(item[0]))
+		app.logger.info("Predicted Quality using SVC: {}".format(svc_texture))
+		app.logger.info("Predicted Quality using Random Forest: {}".format(rf_texture))
+		#return 'Completed Processing'
 		return_string = 'Predicted Item = '+item[0]+'\nPredicted Quality using SVC = '+svc_texture+'\nPredicted Quality using RF = '+rf_texture
 		return return_string
 	else:
 		return "Where is the image?"
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', debug=False)
+	app.run(host='192.168.10.107', debug=False)

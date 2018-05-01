@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/libsvm-3.22/python') #Path to libsvm directory
-# sys.path.append('/Users/aditi/anaconda/lib/python2.7/site-packages') # Path to diretory
-# sys.path.append('/Users/aditi/anaconda/lib/site-python')#path to directory
+sys.path.append('/Users/aditi/anaconda/lib/python2.7/site-packages') # Path to diretory
+sys.path.append('/Users/aditi/anaconda/lib/site-python')#path to directory
 from PIL import Image
 from sklearn import svm
 import numpy as np
@@ -32,7 +32,8 @@ else:
     cores = 1
 
 def find_texture(predicted_item, input_image_path):
-    ROOT_DIR = './TextureImages/'+predicted_item[0]  # path to the apple category directory for initial trial
+    ROOT_DIR = './TextureImages/'+predicted_item[0]+'/'  # path to the apple category directory for initial trial
+    print 'root directory in texture detection is : ',ROOT_DIR
     ALL_TRAIN_IMAGES = []
     ALL_TRAIN_LABELS = []
     class_to_number_convert = {'good': 1, 'bad': 0}
@@ -90,13 +91,15 @@ def find_texture(predicted_item, input_image_path):
     lin_clf = LinearSVC()
     lin_clf.fit(data_train, labels_train)
     predicted_label_linear_svc = lin_clf.predict(test_array_reshaped)
+    predicted_quality_linear_svc = number_to_class_convert[predicted_label_linear_svc[0]]
 
 
     rf_clf = RandomForestClassifier(min_samples_leaf=20, n_jobs=cores)
     rf_clf.fit(data_train, labels_train)
     predicted_label_rf = rf_clf.predict(test_array_reshaped)
+    predicted_quality_rf = number_to_class_convert[predicted_label_rf[0]]
 
-    return (predicted_label_linear_svc , predicted_label_rf)
+    return (predicted_quality_linear_svc , predicted_quality_rf)
 
 
 
