@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/libsvm-3.22/python') #Path to libsvm directory
-sys.path.append('/Users/aditi/anaconda/lib/python2.7/site-packages') # Path to diretory
-sys.path.append('/Users/aditi/anaconda/lib/site-python')#path to directory
+# sys.path.append('/Users/aditi/anaconda/lib/python2.7/site-packages') # Path to diretory
+# sys.path.append('/Users/aditi/anaconda/lib/site-python')#path to directory
 from PIL import Image
 from sklearn import svm
 import numpy as np

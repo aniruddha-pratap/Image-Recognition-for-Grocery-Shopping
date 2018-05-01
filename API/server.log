@@ -1,0 +1,161 @@
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_16_22
+Exception on / [POST]
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "Image-upload.py", line 47, in api_root
+    svc_texture, rf_texture = find_texture(item, saved_path)
+  File "/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/texure_detection.py", line 44, in find_texture
+    list_of_images = os.listdir(ROOT_DIR + c)
+FileNotFoundError: [Errno 2] No such file or directory: './TextureImages/oniongood'
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_19_30
+Exception on / [POST]
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "Image-upload.py", line 53, in api_root
+    return_string = 'Predicted Item = '+item[0]+'\nPredicted Quality using SVC = '+svc_texture+'\nPredicted Quality using RF = '+rf_texture
+NameError: name 'svc_texture' is not defined
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_20_48
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_21_11
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_21_31
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_25_04
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_32_08
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_36_41
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_37_36
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_38_13
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_04_44_52
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_05_17_05
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_05_19_58
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_05_21_48
+Exception on / [POST]
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "Image-upload.py", line 47, in api_root
+    svc_texture, rf_texture = find_texture(item, saved_path)
+  File "/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/texure_detection.py", line 44, in find_texture
+    list_of_images = os.listdir(ROOT_DIR + c)
+FileNotFoundError: [Errno 2] No such file or directory: './TextureImages/oniongood'
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_05_23_01
+Exception on / [POST]
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "Image-upload.py", line 47, in api_root
+    #svc_texture, rf_texture = find_texture(item, saved_path)
+  File "/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/texure_detection.py", line 44, in find_texture
+    list_of_images = os.listdir(ROOT_DIR + c)
+FileNotFoundError: [Errno 2] No such file or directory: './TextureImages/oniongood'
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/
+saving /Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API/uploads/2018_05_01_05_23_36
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API
+/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/API

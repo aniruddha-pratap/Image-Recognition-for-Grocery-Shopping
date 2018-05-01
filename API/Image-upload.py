@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/libsvm-3.22/python') #Path to libsvm directory
-sys.path.append('/Users/aditi/anaconda/lib/python2.7/site-packages')
-sys.path.append('/Users/aditi/anaconda/lib/site-python')
+# sys.path.append('/Users/aditi/anaconda/lib/python2.7/site-packages')
+# sys.path.append('/Users/aditi/anaconda/lib/site-python')
 
 from flask import Flask, url_for, send_from_directory, request
 import logging, os
@@ -38,7 +38,8 @@ def api_root():
 		img_name_2 = datetime.datetime.fromtimestamp(ts).strftime('%Y_%m_%d_%H_%M_%S')
 		create_new_folder(app.config['UPLOAD_FOLDER'])
 		saved_path = os.path.join(app.config['UPLOAD_FOLDER'], img_name_2) # We ignore the extension of the file, assuming it is an image
-		app.logger.info("saving {}".format(saved_path))img.save(saved_path)
+		app.logger.info("saving {}".format(saved_path))
+		img.save(saved_path)
 
 
 		# call the prediction module to predict the items
