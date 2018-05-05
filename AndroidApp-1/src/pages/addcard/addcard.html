@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Cart</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+ <h1>My Bag {{itemCount}} item</h1>
+ <ion-card *ngFor="let item of partOfTitle;let i = index">
+  
+  <ion-card-content >
+    <ion-card-title>
+      {{item.name}}
+      <div class="rflot"><div class="S-WY"><div class="_3dg7"><ion-icon (click)="remove()" name="ios-remove-circle"></ion-icon></div><div class="_23o4">{{numberOfItem}}</div><div class="_3Hj-"><ion-icon (click)="add()" name="ios-add-circle"></ion-icon></div></div></div>
+      </ion-card-title>
+    <p>
+    {{item.measure}} 
+    </p>
+    <p>
+      {{item.weight}} 
+    </p>
+  </ion-card-content>
+</ion-card>
+</ion-content>

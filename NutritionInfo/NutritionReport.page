@@ -1,0 +1,17 @@
+<apex:page controller="FetchNutritionInformation" sidebar="false" showHeader="false" title="Capture Cart">
+    <center>
+        <br/><br/>
+        <table border="1">        
+            <tr><td>Name: </td><td><apex:outputText value="{!foodInfo.name}" id="theValue1"/></td></tr>
+            <tr><td>Weight: </td><td><apex:outputText value="{!foodInfo.weight}" id="theValue12"/></td></tr>
+            <tr><td>Measure: </td><td><apex:outputText value="{!foodInfo.measure}" id="theValue123"/></td></tr>
+        </table>
+        <br/>
+        <table border="1">        
+            <tr><th>Nutrient</th><th>Value</th><th>gms</th></tr>
+            <apex:repeat value="{!foodInfo.nutrients}" var="string" id="theRepeat">
+                <tr><td>{!string.nutrient} </td><td><apex:outputText value="{!string.value}" id="theValue1234"/></td><td>{!string.gm} </td></tr>            
+            </apex:repeat>
+        </table>
+    </center>
+</apex:page>

@@ -1,0 +1,73 @@
+//https://ndb.nal.usda.gov/ndb/doc/apilist/API-NUTRIENT-REPORT.md
+//https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=DEMO_KEY&nutrients=205&nutrients=204&nutrients=208&nutrients=269&ndbno=01009
+//https://ndb.nal.usda.gov/ndb/doc/apilist/API-LIST.md
+//1100
+@RestResource(urlMapping='/FetchNutritionInformation')
+global class FetchNutritionInformation 
+{
+    public static String itemnmbr{set;get;}
+    public static String groupnmbr{set;get;}
+    public static String MyParameter{set;get;}
+    public static NutrientReport.Foods foodInfo{set;get;}
+    
+    public FetchNutritionInformation()
+    {
+        MyParameter = ApexPages.currentPage().getParameters().get('item');
+        System.debug('@@@@ MyParameter'+MyParameter);
+        getNutritionInfo();
+    }
+    @HttpGet
+    global static String getNutritionInfo()
+    {
+        //System.debug('endpoint:::'+endpoint);
+        String method = 'GET';
+        //String itemnmbr,groupnmbr;
+        /* HTTP request to get the weight data from human API. This contains the Endpoint, methodname, Header  */
+        Http http = new Http();
+        HttpRequest request = new HttpRequest();        
+        request.setEndpoint('https://api.nal.usda.gov/ndb/search/?ds=Standard%20Reference&format=json&q='+MyParameter+'+raw&sort=n&max=2&offset=0&api_key=vOcJ8s9IouIwURA4ldBwnF6C66gGxkETIWMq1LvY&fg=0900');
+        request.setMethod(method);
+        //request.setHeader(headerName,authorizationHeader);
+        HttpResponse response; 
+        List<String> responseBodyList = new List<String>();
+        boolean iterate = true;
+        String responsebody;
+        response = http.send(request);  
+        System.debug('@@@@ The Response @@@@'+response);
+        System.debug(response.getBody());
+        NutritionInfo info;
+        if(response.getStatusCode() == 200){            
+            JSONParser parser = JSON.createParser(response.getBody());
+            info = new NutritionInfo(parser);
+            System.debug('@@@@ info @@@@'+info);             
+        }
+        if(response.getStatusCode() != 200 || info.list_Z ==null)
+        {
+            request.setEndpoint('https://api.nal.usda.gov/ndb/search/?ds=Standard%20Reference&format=json&q='+MyParameter+'+raw&sort=n&max=2&offset=0&api_key=vOcJ8s9IouIwURA4ldBwnF6C66gGxkETIWMq1LvY&fg=1100');
+            response = http.send(request); 
+            if(response.getStatusCode() == 200){            
+                JSONParser parser = JSON.createParser(response.getBody());
+                info = new NutritionInfo(parser);
+                System.debug('@@@@ info @@@@'+info);             
+            }
+        }
+        if(info.list_Z ==null)
+        {
+            //return null;
+            System.debug('@@@ Nothing found on the database, please try again @@@');
+        }
+        else
+        {
+            itemnmbr = (info.list_Z.item[0]).ndbno;
+            groupnmbr = info.list_Z.group_Z;
+            System.debug('@@@ the group is @@@ '+groupnmbr);
+            request.setEndpoint('https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=vOcJ8s9IouIwURA4ldBwnF6C66gGxkETIWMq1LvY&nutrients=205&nutrients=204&nutrients=208&nutrients=269&ndbno='+itemnmbr+'&fg='+groupnmbr);
+            response = http.send(request); 
+            System.debug(response.getBody());
+            NutrientReport obj = NutrientReport.parse(response.getBody());
+            foodInfo = obj.report.foods[0];
+            System.debug('@@@@ the obj is @@@@'+obj);            
+        }       
+        return JSON.serialize(foodInfo);
+    }
+}

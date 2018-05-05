@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Capture2Cart</ion-title>
+    <ion-buttons right>
+      <ion-badge color="secondary">{{count}}</ion-badge>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+
+ 
+<!--//<ion-badge color="secondary"></ion-badge>-->
+<ion-card>
+    <ion-card-content>
+      
+
+     <button id="signup-button2" ion-button icon-only color="stable" block icon-left on-click="Camera()">
+      <ion-icon name="log-in"></ion-icon>
+      Camera
+    </button>
+
+      Latest Picture:
+      <img [src]="base64Image" *ngIf="base64Image" />
+      <button ion-button round (click)="upload()" *ngIf="base64Image">Upload</button>
+    </ion-card-content>
+  </ion-card>
+
+
+<ion-grid class="col" *ngIf="!CheckIngValueFlag">
+  <ion-row>
+    <ion-col class="blackBorder">
+      Name
+    </ion-col>
+    <ion-col class="blackBorder">
+       {{name}}
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="blackBorder">
+      Weight
+    </ion-col>
+    <ion-col class="blackBorder">
+       {{weight}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="blackBorder">
+      Measure
+    </ion-col>
+    <ion-col class="blackBorder">
+       {{measure}}
+    </ion-col>
+  </ion-row>
+
+
+
+
+  <ion-row class="fontLarge">
+    <ion-col class="blackBorder">
+      Nutrient
+    </ion-col>
+    <ion-col class="blackBorder">
+      Value
+    </ion-col>
+    <ion-col class="blackBorder">
+      Gms
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row *ngFor="let item of nutrients;let i = index">
+    <ion-col class="blackBorder">
+      {{item.nutrient}}
+    </ion-col>
+    <ion-col class="blackBorder">
+      {{item.value}}
+    </ion-col>
+    <ion-col class="blackBorder">
+      {{item.gm}}
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-card *ngIf="CheckIngValueFlag">
+
+  <ion-card-header>
+    Sorry
+  </ion-card-header>
+
+  <ion-card-content>
+    Data not found. 
+  </ion-card-content>
+
+</ion-card>
+
+<!--<button id="signup-button2" ion-button icon-only color="stable" block icon-left on-click="AddCard()">
+      <ion-icon name="ios-cart"></ion-icon>
+      Add to Cart
+    </button>
+
+<button id="signup-button2" ion-button icon-only color="stable" block icon-left on-click="OpenAddCard()">
+      <ion-icon name="ios-cart"></ion-icon>
+      Open Cart
+    </button>-->
+
+<div class="textCemter" *ngIf="showAfterDataonly">
+<button ion-button color="light" (click)="AddCard()" icon-left><ion-icon name="ios-cart"></ion-icon> Add to Cart</button>
+
+<button ion-button color="dark" (click)="OpenAddCard()" icon-left> <ion-icon name="ios-cart"></ion-icon> Open Cart</button>
+</div>
+</ion-content>

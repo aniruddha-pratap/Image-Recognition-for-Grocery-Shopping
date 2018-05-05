@@ -1,0 +1,197 @@
+
+
+public class NutrientReport {
+
+  public Report report {get;set;} 
+
+  public NutrientReport(JSONParser parser) {
+    while (parser.nextToken() != System.JSONToken.END_OBJECT) {
+      if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
+        String text = parser.getText();
+        if (parser.nextToken() != System.JSONToken.VALUE_NULL) {
+          if (text == 'report') {
+            report = new Report(parser);
+          } else {
+            System.debug(LoggingLevel.WARN, 'JSON2Apex consuming unrecognized property: '+text);
+            consumeObject(parser);
+          }
+        }
+      }
+    }
+  }
+  
+  public class Report {
+    public String sr {get;set;} 
+    public List<Groups> groups {get;set;} 
+    public String subset {get;set;} 
+    public Integer end_Z {get;set;} // in json: end
+    public Integer start {get;set;} 
+    public Integer total {get;set;} 
+    public List<Foods> foods {get;set;} 
+
+    public Report(JSONParser parser) {
+      while (parser.nextToken() != System.JSONToken.END_OBJECT) {
+        if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
+          String text = parser.getText();
+          if (parser.nextToken() != System.JSONToken.VALUE_NULL) {
+            if (text == 'sr') {
+              sr = parser.getText();
+            } else if (text == 'groups') {
+              groups = arrayOfGroups(parser);
+            } else if (text == 'subset') {
+              subset = parser.getText();
+            } else if (text == 'end') {
+              end_Z = parser.getIntegerValue();
+            } else if (text == 'start') {
+              start = parser.getIntegerValue();
+            } else if (text == 'total') {
+              total = parser.getIntegerValue();
+            } else if (text == 'foods') {
+              foods = arrayOfFoods(parser);
+            } else {
+              System.debug(LoggingLevel.WARN, 'Report consuming unrecognized property: '+text);
+              consumeObject(parser);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  public class Groups {
+    public String id {get;set;} 
+    public String description {get;set;} 
+
+    public Groups(JSONParser parser) {
+      while (parser.nextToken() != System.JSONToken.END_OBJECT) {
+        if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
+          String text = parser.getText();
+          if (parser.nextToken() != System.JSONToken.VALUE_NULL) {
+            if (text == 'id') {
+              id = parser.getText();
+            } else if (text == 'description') {
+              description = parser.getText();
+            } else {
+              System.debug(LoggingLevel.WARN, 'Groups consuming unrecognized property: '+text);
+              consumeObject(parser);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  public class Nutrients {
+    public String nutrient_id {get;set;} 
+    public String nutrient {get;set;} 
+    public String unit {get;set;} 
+    public String value {get;set;} 
+    public Double gm {get;set;} 
+
+    public Nutrients(JSONParser parser) {
+      while (parser.nextToken() != System.JSONToken.END_OBJECT) {
+        if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
+          String text = parser.getText();
+          if (parser.nextToken() != System.JSONToken.VALUE_NULL) {
+            if (text == 'nutrient_id') {
+              nutrient_id = parser.getText();
+            } else if (text == 'nutrient') {
+              nutrient = parser.getText();
+            } else if (text == 'unit') {
+              unit = parser.getText();
+            } else if (text == 'value') {
+              value = parser.getText();
+            } else if (text == 'gm') {
+              gm = parser.getDoubleValue();
+            } else {
+              System.debug(LoggingLevel.WARN, 'Nutrients consuming unrecognized property: '+text);
+              consumeObject(parser);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  public class Foods {
+    public String ndbno {get;set;} 
+    public String name {get;set;} 
+    public Double weight {get;set;} 
+    public String measure {get;set;} 
+    public List<Nutrients> nutrients {get;set;} 
+
+    public Foods(JSONParser parser) {
+      while (parser.nextToken() != System.JSONToken.END_OBJECT) {
+        if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
+          String text = parser.getText();
+          if (parser.nextToken() != System.JSONToken.VALUE_NULL) {
+            if (text == 'ndbno') {
+              ndbno = parser.getText();
+            } else if (text == 'name') {
+              name = parser.getText();
+            } else if (text == 'weight') {
+              weight = parser.getDoubleValue();
+            } else if (text == 'measure') {
+              measure = parser.getText();
+            } else if (text == 'nutrients') {
+              nutrients = arrayOfNutrients(parser);
+            } else {
+              System.debug(LoggingLevel.WARN, 'Foods consuming unrecognized property: '+text);
+              consumeObject(parser);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
+  public static NutrientReport parse(String json) {
+    System.JSONParser parser = System.JSON.createParser(json);
+    return new NutrientReport(parser);
+  }
+  
+  public static void consumeObject(System.JSONParser parser) {
+    Integer depth = 0;
+    do {
+      System.JSONToken curr = parser.getCurrentToken();
+      if (curr == System.JSONToken.START_OBJECT || 
+        curr == System.JSONToken.START_ARRAY) {
+        depth++;
+      } else if (curr == System.JSONToken.END_OBJECT ||
+        curr == System.JSONToken.END_ARRAY) {
+        depth--;
+      }
+    } while (depth > 0 && parser.nextToken() != null);
+  }
+  
+    private static List<Nutrients> arrayOfNutrients(System.JSONParser p) {
+        List<Nutrients> res = new List<Nutrients>();
+        if (p.getCurrentToken() == null) p.nextToken();
+        while (p.nextToken() != System.JSONToken.END_ARRAY) {
+            res.add(new Nutrients(p));
+        }
+        return res;
+    }
+
+
+    private static List<Groups> arrayOfGroups(System.JSONParser p) {
+        List<Groups> res = new List<Groups>();
+        if (p.getCurrentToken() == null) p.nextToken();
+        while (p.nextToken() != System.JSONToken.END_ARRAY) {
+            res.add(new Groups(p));
+        }
+        return res;
+    }
+
+
+
+    private static List<Foods> arrayOfFoods(System.JSONParser p) {
+        List<Foods> res = new List<Foods>();
+        if (p.getCurrentToken() == null) p.nextToken();
+        while (p.nextToken() != System.JSONToken.END_ARRAY) {
+            res.add(new Foods(p));
+        }
+        return res;
+    }
+}

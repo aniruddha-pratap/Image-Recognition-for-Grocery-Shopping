@@ -1,0 +1,127 @@
+public class NutritionInfo {
+    
+    public class Item {
+        public Integer offset {get;set;} 
+        public String group_Z {get;set;} // in json: group
+        public String name {get;set;} 
+        public String ndbno {get;set;} 
+        public String ds {get;set;} 
+        
+        public Item(JSONParser parser) {
+            while (parser.nextToken() != System.JSONToken.END_OBJECT) {
+                if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
+                    String text = parser.getText();
+                    if (parser.nextToken() != System.JSONToken.VALUE_NULL) {
+                        if (text == 'offset') {
+                            offset = parser.getIntegerValue();
+                        } else if (text == 'group') {
+                            group_Z = parser.getText();
+                        } else if (text == 'name') {
+                            name = parser.getText();
+                        } else if (text == 'ndbno') {
+                            ndbno = parser.getText();
+                        } else if (text == 'ds') {
+                            ds = parser.getText();
+                        } else {
+                            System.debug(LoggingLevel.WARN, 'Item consuming unrecognized property: '+text);
+                            consumeObject(parser);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    public List_Z list_Z {get;set;} // in json: list
+    
+    public NutritionInfo(JSONParser parser) {
+        while (parser.nextToken() != System.JSONToken.END_OBJECT) {
+            if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
+                String text = parser.getText();
+                if (parser.nextToken() != System.JSONToken.VALUE_NULL) {
+                    if (text == 'list') {
+                        list_Z = new List_Z(parser);
+                    } else {
+                        System.debug(LoggingLevel.WARN, 'NutritionInfo consuming unrecognized property: '+text);
+                        consumeObject(parser);
+                    }
+                }
+            }
+        }
+    }
+    
+    public class List_Z {
+        public String q {get;set;} 
+        public String sr {get;set;} 
+        public String ds {get;set;} 
+        public Integer start {get;set;} 
+        public Integer end_Z {get;set;} // in json: end
+        public Integer total {get;set;} 
+        public String group_Z {get;set;} // in json: group
+        public String sort_Z {get;set;} // in json: sort
+        public List<Item> item {get;set;} 
+        
+        public List_Z(JSONParser parser) {
+            while (parser.nextToken() != System.JSONToken.END_OBJECT) {
+                if (parser.getCurrentToken() == System.JSONToken.FIELD_NAME) {
+                    String text = parser.getText();
+                    if (parser.nextToken() != System.JSONToken.VALUE_NULL) {
+                        if (text == 'q') {
+                            q = parser.getText();
+                        } else if (text == 'sr') {
+                            sr = parser.getText();
+                        } else if (text == 'ds') {
+                            ds = parser.getText();
+                        } else if (text == 'start') {
+                            start = parser.getIntegerValue();
+                        } else if (text == 'end') {
+                            end_Z = parser.getIntegerValue();
+                        } else if (text == 'total') {
+                            total = parser.getIntegerValue();
+                        } else if (text == 'group') {
+                            group_Z = parser.getText();
+                        } else if (text == 'sort') {
+                            sort_Z = parser.getText();
+                        } else if (text == 'item') {
+                            item = arrayOfItem(parser);
+                        } else {
+                            System.debug(LoggingLevel.WARN, 'List_Z consuming unrecognized property: '+text);
+                            consumeObject(parser);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    public static NutritionInfo parse(String json) {
+        System.JSONParser parser = System.JSON.createParser(json);
+        return new NutritionInfo(parser);
+    }
+    
+    public static void consumeObject(System.JSONParser parser) {
+        Integer depth = 0;
+        do {
+            System.JSONToken curr = parser.getCurrentToken();
+            if (curr == System.JSONToken.START_OBJECT || 
+                curr == System.JSONToken.START_ARRAY) {
+                    depth++;
+                } else if (curr == System.JSONToken.END_OBJECT ||
+                           curr == System.JSONToken.END_ARRAY) {
+                               depth--;
+                           }
+        } while (depth > 0 && parser.nextToken() != null);
+    }
+    
+    
+    
+    private static List<Item> arrayOfItem(System.JSONParser p) {
+        List<Item> res = new List<Item>();
+        if (p.getCurrentToken() == null) p.nextToken();
+        while (p.nextToken() != System.JSONToken.END_ARRAY) {
+            res.add(new Item(p));
+        }
+        return res;
+    }
+}
