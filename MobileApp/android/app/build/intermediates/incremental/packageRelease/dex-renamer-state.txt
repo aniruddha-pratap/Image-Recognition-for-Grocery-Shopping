@@ -1,0 +1,4 @@
+#Sat May 05 16:52:49 PDT 2018
+base.0=/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex
