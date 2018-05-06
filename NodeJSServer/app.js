@@ -13,8 +13,6 @@ var signup = require('./routes/signup');
 var logout = require('./routes/logout');
 var cart = require('./routes/cart');
 var cartRemove = require('./routes/cartRemove');
-var checkout = require('./routes/checkout');
-var myOrders = require('./routes/myOrders');
 var updateTotal = require('./routes/updateTotal');
 
 var app = express();
@@ -44,8 +42,6 @@ app.use('/logout', logout);
 app.use('/cart', cart);
 app.use('/updateTotal', updateTotal);
 app.use('/cartRemove', cartRemove);
-app.use('/checkout', checkout);
-app.use('/myOrders', myOrders);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
