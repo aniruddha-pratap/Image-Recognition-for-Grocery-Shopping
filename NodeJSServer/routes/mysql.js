@@ -5,7 +5,7 @@ var connPool = [];
 
 //Put your mysql configuration settings - user, password, database and port
 function getconn(){
-	var conn = mysql.createconn({
+	var conn = mysql.createConnection({
 	    host     : 'Give your db host name',
 	    user     : 'Give username',
 	    password : 'Give password',
