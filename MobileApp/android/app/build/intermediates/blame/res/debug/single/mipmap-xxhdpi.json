@@ -2,5 +2,9 @@
     {
         "merged": "/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
         "source": "/Users/aniruddha/Desktop/Webstorm/myApp/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     }
 ]

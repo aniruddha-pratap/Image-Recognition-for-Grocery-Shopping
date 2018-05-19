@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Image, Text, TextInput } from 'react-native';
 import {Grid, Row, Col} from 'native-base';
-import QuantityInput from './QuantityInput';
+import QtyInput from './QtyInput';
 
-export default class CartItem extends React.Component {
+export default class ItemInCart extends React.Component {
 
 
     state = {
@@ -52,7 +52,7 @@ export default class CartItem extends React.Component {
                                 <Text style={{marginTop:5,fontWeight:'700'}}>${this.props.product.price}</Text>
                             </Col>
                             <Col style={{alignItems:'flex-end'}}>
-                                <QuantityInput
+                                <QtyInput
                                     orientation="horizontal"
                                     initialValue={this.props.product.qty}
                                     styleTextInput={{backgroundColor:"transparent",width:25}}

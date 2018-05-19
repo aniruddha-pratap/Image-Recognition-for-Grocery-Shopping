@@ -8,7 +8,7 @@ import {Container,
     Button,
     Title
 } from 'native-base';
-import CartItem from '../components/CartItem';
+import ItemInCart from '../components/ItemInCart';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Actions } from 'react-native-router-flux';
 
@@ -122,7 +122,7 @@ export default class CartScreen extends Component {
                 <Content padder>
                     {this.state.products.map((product, index) => {
                         return (
-                            <CartItem product={product}
+                            <ItemInCart product={product}
                                       key={index}
                                       fecthProcessed={this.totPrice}
                             />

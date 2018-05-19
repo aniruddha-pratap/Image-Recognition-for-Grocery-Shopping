@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/src/debug/shaders"/></dataSet></merger>

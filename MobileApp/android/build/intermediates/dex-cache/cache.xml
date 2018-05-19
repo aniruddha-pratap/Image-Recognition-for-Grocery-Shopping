@@ -3,6 +3,15 @@
 
     <item
         is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_dd7ddc66b27f7785bd9a4776b5150da944678144.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
         jumboMode="false"
         optimize="true"
@@ -30,6 +39,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_54b7b864eb6fdd2bbf1528f074ef2be829a4c4fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -54,6 +72,33 @@
         revision="23.0.1"
         sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
         <dex dex="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_5c2b5d5343b6366f6f806c75b576a3823d8e4417.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_bf89fa4fc87b68d25e8e1e50f6e345eaac4dfb1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/myApp/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/myApp-react-native-vector-icons-unspecified_4df90025964ac398b427489eb6e90d18742b88fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.0/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_b63c6dcb26a682fc121135eed11bf76326d914eb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -102,15 +147,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
-        <dex dex="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_a0053aa78f38d3d652724b6b5c82ca6c9a1f12e7.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/aniruddha/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
@@ -120,12 +156,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_a0053aa78f38d3d652724b6b5c82ca6c9a1f12e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.0/jars/libs/infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="9809e90be788acdb479b2b44e2112f3295a03068">
         <dex dex="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_987998fc5903c7bfe6383bc83cc56d4474383e1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/myApp/react-native-image-picker/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9f95540d3b14aed0250ba28dd07beece0df87598">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/myApp-react-native-image-picker-unspecified_0b13902c889baadf65a5ebd9eb20833333e6b013.jar" />
     </item>
     <item
         is-multidex="false"
@@ -147,6 +201,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9bc5c658348a96fc5110ac2a8785920bb9417c07">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.54.0_60b32df3b53a0010c4ef16b192215b4d76cc2ee8.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -165,12 +228,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/myApp/react-native-image-picker/unspecified/jars/classes.jar"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="9f95540d3b14aed0250ba28dd07beece0df87598">
-        <dex dex="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/pre-dexed/debug/myApp-react-native-image-picker-unspecified_87265904d5d4f3ca9147b0bff6702e7bf16ee499.jar" />
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_44c7f26ef285a73a53b6552a996353a28d183d46.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_0fae77f5f807664671910be6dc7d1c900e7e925a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -180,6 +252,24 @@
         revision="23.0.1"
         sha1="f162442a19fff13995fbd51ba414d9ee05579080">
         <dex dex="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_9a76a279a3651a37285a5320d925bf9ec12e2921.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_94adca5e1bec29b365b4ba64e597b8e4f43b3b0b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/myApp/react-native-image-picker/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9f95540d3b14aed0250ba28dd07beece0df87598">
+        <dex dex="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/pre-dexed/debug/myApp-react-native-image-picker-unspecified_87265904d5d4f3ca9147b0bff6702e7bf16ee499.jar" />
     </item>
     <item
         is-multidex="false"
@@ -201,12 +291,57 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_94664c97c9037c3bcdb7f3db6af9a67de8fc318c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_e06267949ec4478b4d8377883e991be9e4d63e30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_9a92ef6d1ee8746778a1d8b67076fa43256ebb1a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_710e6bd1fdc1fd27c3bc6107ffe0c01c71597252.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
         <dex dex="/Users/aniruddha/Desktop/Webstorm/myApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_a24acc4b591d5a7a56f35defcade40b79d5ea4bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/Users/aniruddha/Documents/GitHub/Image-To-Text-Conversion/MobileApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_8c82c5588162de5244a04a1b1e0d5dd75006ad67.jar" />
     </item>
 
 </items>

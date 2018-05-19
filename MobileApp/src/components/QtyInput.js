@@ -9,7 +9,7 @@ import {
     TouchableHighlight
 } from 'react-native';
 
-export default class QuantityInput extends React.Component {
+export default class QtyInput extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -19,14 +19,14 @@ export default class QuantityInput extends React.Component {
         this.plusButton= this.plusButton.bind(this)
     }
 
-    _renderMinusButton(){
+    minusBtn(){
         return(
             <TouchableHighlight underlayColor={'#999999'} onPress={this.minusButton} style={[styles.button, this.props.styleButton]}>
                 <Image source={require('../images/minus.png')} style={this.props.styleImage} />
             </TouchableHighlight>
         )
     }
-    _renderInput(){
+    renderIp(){
         return (
             <TextInput
                 style={[styles.textinput, this.props.styleTextInput]}
@@ -37,7 +37,7 @@ export default class QuantityInput extends React.Component {
         )
     }
 
-    _renderPlusButton(){
+    plusBtn(){
         return (
             <TouchableHighlight underlayColor={'#999999'} onPress={this.plusButton} style={[styles.button, this.props.styleButton]}>
                 <Image source={require('../images/plus.png')} style={this.props.styleImage} />
@@ -51,9 +51,9 @@ export default class QuantityInput extends React.Component {
             return (
                 <View style={this.props.styleWraper}>
                     <View style={styles.vertical}>
-                        {this._renderPlusButton()}
-                        {this._renderInput()}
-                        {this._renderMinusButton()}
+                        {this.plusBtn()}
+                        {this.renderIp()}
+                        {this.minusBtn()}
                     </View>
                 </View>
             )
@@ -61,9 +61,9 @@ export default class QuantityInput extends React.Component {
         return (
             <View style={this.props.styleWraper}>
                 <View style={styles.horizontal}>
-                    {this._renderMinusButton()}
-                    {this._renderInput()}
-                    {this._renderPlusButton()}
+                    {this.minusBtn()}
+                    {this.renderIp()}
+                    {this.plusBtn()}
                 </View>
             </View>
         )
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
 });
 
 
-QuantityInput.propTypes={
+QtyInput.propTypes={
     initialValue : PropTypes.number,
     min : PropTypes.number,
     max : PropTypes.number,
@@ -153,7 +153,7 @@ QuantityInput.propTypes={
     styleImage :PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
 };
 
-QuantityInput.defaultProps = {
+QtyInput.defaultProps = {
     initialValue: 0,
     min: -1,
     max: null,
