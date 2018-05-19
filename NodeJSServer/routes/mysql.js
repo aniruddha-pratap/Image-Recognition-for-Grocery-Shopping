@@ -4,29 +4,29 @@ var connPool = [];
 
 
 //Put your mysql configuration settings - user, password, database and port
-function getConnection(){
-	var connection = mysql.createConnection({
+function getconn(){
+	var conn = mysql.createconn({
 	    host     : 'Give your db host name',
 	    user     : 'Give username',
 	    password : 'Give password',
 	    database : 'ImageRecognition',
 	    port	 : 3306
 	});
-	return connection;
+	return conn;
 }
 
 for(var i = 0;i<5;i++){
-	var connection = getConnection();
-	connPool.push(connection);
+	var conn = getconn();
+	connPool.push(conn);
 }
 
-function exportConnection(){
-	if(connPool.length != 0){
+function exportConn(){
+	if(connPool.length !== 0){
 		return connPool.pop();
 	}
 	else{
 		setInterval(function(){
-			exportConnection();
+			exportConn();
 		},1);
 	}
 }
@@ -34,18 +34,18 @@ function exportConnection(){
 function fetchData(callback,sqlQuery){
 	
 	console.log("\nSQL Query::"+sqlQuery);
-	var connection=exportConnection();
+	var conn=exportConn();
 	console.log("After popping: "+connPool.length);
-	connection.query(sqlQuery, function(err, rows, fields) {
-		console.log("\nConnection released..");
-		connPool.push(connection);
+	conn.query(sqlQuery, function(err, rows, fields) {
+		console.log("\nconn released..");
+		connPool.push(conn);
 		console.log("After pushing: "+connPool.length);
 		if(err){
-			console.log("ERROR: " + err.message);
+			console.log("In error: " + err.message);
 		}
 		else 
-		{	// return err or result
-			console.log("DB Results:"+rows);
+		{
+			console.log("Result: "+rows);
 			callback(err, rows);
 		}
 	});
